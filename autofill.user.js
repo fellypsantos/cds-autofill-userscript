@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         e-SUS-CDS AutoFill
 // @namespace    https://github.com/fellypsantos/cds-autofill
-// @version      2.0
+// @version      2.1
 // @description  Controla as requisições ao servidor de consultas de dados, e interações com o usuário.
 // @author       Fellyp Santos
 // @match        http://**/esus/*
