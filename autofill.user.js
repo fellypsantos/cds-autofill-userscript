@@ -516,9 +516,13 @@ const Text = {
 const fillUserInformation = (response) => {
   /* Fill text fields */
   for (const field in FormHelper.Fields.text_fields) {
-    const textField = $('input')[FormHelper.Fields.text_fields[field]]
-    textField.focus()
-    textField.value = response[field]
+    const textField = document.querySelectorAll('input')[FormHelper.Fields.text_fields[field]];
+
+    setTimeout(() => {
+        console.log(textField, response[field])
+        textField.focus()
+        textField.value = response[field]
+    }, 200);
 
     /* Search for null values */
     const index = field === 'mae' ? 24 : 26
@@ -526,6 +530,11 @@ const fillUserInformation = (response) => {
     /* Check field 'DESCONHECIDO' */
     if (response[field] == null) $('input').eq(index).click()
   }
+
+  setTimeout(() => {
+      document.querySelectorAll('input')[35].value = response.telefone;
+      console.log('forcerd phone number in timeout');
+  }, 500);
 
   /* Fill null radios buttons */
   for (const field in FormHelper.Fields.radio_fields) {
